@@ -3,19 +3,15 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Institution;
 use App\Models\Settings;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\View;
 use RealRashid\SweetAlert\Facades\Alert;
-use App\User;
 use Exception;
-class PermissionController extends Controller
+class InstitutionController extends Controller
 {
 
-
-    /**
-     * PermissionController constructor.
-     */
     public function __construct()
     {
         $name =Settings::select('app_name')->get();
@@ -32,9 +28,9 @@ class PermissionController extends Controller
     public function index()
     {
         if (auth()->user()->is_admin == 1) {
-            $users = User::get();
-           // return $users;
-            return view('admin.permission.manage', compact('users'));
+            $institutions = Institution::get();
+            // return $users;
+            return view('admin.institution.manage', compact('institutions'));
         } else {
             Alert::warning("Oh! Sorry", "You Don't Have Permission to Access");
             //setMessage('danger', 'Oh! Sorry ..You Have No Permission to Edit');
@@ -49,6 +45,45 @@ class PermissionController extends Controller
 
 
     /**
+     * @param Request $request
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
+    public function store(Request $request)
+    {
+        //return $request;
+
+        $request->validate([
+            'school_name' => 'required',
+            'school_reg' => 'required',
+
+        ]);
+        $institution = null;
+        try {
+            $institution = Institution::create([
+                'school_name' => $request->school_name,
+                'school_reg' => $request->school_reg,
+
+            ]);
+
+        } catch (Exception $exception) {
+            $institution = false;
+        }
+
+        if ($institution) {
+            Alert::warning('Yay!', 'Institution Info has been successfully created.');
+            // setMessage('success', 'Yay! A slider has been successfully created.');
+        } else {
+            Alert::warning('Oops!', ' Unable to create a new Institution Info.');
+            //setMessage('danger', 'Oops! Unable to create a new slider.');
+        }
+        return redirect('institution/manage');
+        // return redirect()->back();
+
+    }
+
+
+
+    /**
      * @param $id
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
@@ -56,9 +91,9 @@ class PermissionController extends Controller
     {
         if (auth()->user()->is_admin == 1) {
             $id     = base64_decode($id);
-            $user = User::find($id);
-             //return $user;
-            return view('admin.permission.edit', compact('user'));
+            $institution = Institution::find($id);
+            //return $user;
+            return view('admin.institution.edit', compact('institution'));
         }
     }
 
@@ -73,37 +108,37 @@ class PermissionController extends Controller
     public function update(Request $request, $id)
     {
         if (auth()->user()->is_admin == 1) {
-            $user = User::find($id);
+            $institution = Institution::find($id);
 
             $request->validate([
-                'name' => 'required',
-                'email' => 'required',
-                'is_admin' => 'required',
+                'school_name' => 'required',
+                'school_reg' => 'required',
             ]);
 
             $success = null;
             try {
 
-                $success = $user->update([
-                    'name' => $request->name,
-                    'email' => $request->email,
-                    'is_admin' => $request->is_admin,
+                $success = $institution->update([
+                    'school_name' => $request->school_name,
+                    'school_reg' => $request->school_reg,
                 ]);
             } catch (Exception $exception) {
                 $success = false;
             }
 
             if ($success) {
-                Alert::warning('Yay!', ' A Permission has been successfully updated.');
+                Alert::warning('Yay!', ' A Institution Info. has been successfully updated.');
                 // setMessage('success', 'Yay! A slider has been successfully updated.');
             } else {
-                Alert::warning('Oops!', ' Unable to Update a new Permission.');
+                Alert::warning('Oops!', ' Unable to Update a new Institution Info.');
                 // setMessage('danger', 'Oops! Unable to update slider.');
             }
             // return redirect()->back();
-            return redirect('permission/manage');
+            return redirect('institution/manage');
         }
     }
+
+
 
 
 
@@ -115,9 +150,9 @@ class PermissionController extends Controller
     {
         if (auth()->user()->is_admin == 1) {
             $id     = base64_decode($id);
-            $user = User::find($id);
-            $user->delete();
-            Alert::warning('Yay!', ' A Normal User has been successfully Deleted.');
+            $institution = Institution::find($id);
+            $institution->delete();
+            Alert::warning('Yay!', ' Institution Info. has been successfully Deleted.');
 
             return redirect()->back();
         }

@@ -1,6 +1,6 @@
 @extends('admin.components.layout')
 @section('title')
-    Edit Slider | School-M-System
+    Edit Slider |
 @endsection
 
 @section('content')

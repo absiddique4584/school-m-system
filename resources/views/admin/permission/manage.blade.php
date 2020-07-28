@@ -1,6 +1,6 @@
 @extends('admin.components.layout')
 @section('title')
-    Permission Manage | School-M-System
+    Permission Manage |
 @endsection
 
 @section('content')
@@ -12,11 +12,6 @@
                 <li class="breadcrumb-item ">Manage Permission</li>
             </ol>
 
-
-            <!--------------------------------------------->
-            <!--------------------------------------------->
-
-
             <div class="container-fluid ">
                 <div class="row">
 
@@ -26,7 +21,7 @@
                     </div>
 
                 </div>
-
+            </div>
 
 
                 <div class="card mb-4 ">
@@ -67,11 +62,6 @@
                         </div>
                     </div>
                 </div>
-
-
-
-                <!--------------------------------------------->
-                <!--------------------------------------------->
 
 
             </div>

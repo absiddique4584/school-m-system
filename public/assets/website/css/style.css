@@ -1,11 +1,4 @@
-/*
-  Theme Name: Flattern
-  Theme URL: https://bootstrapmade.com/flattern-multipurpose-bootstrap-template/
-  Author: BootstrapMade.com
-  Author URL: https://bootstrapmade.com
-*/
 
-/* === prettify === */
 
 @import url('../js/google-code-prettify/prettify.css');
 /* === fontawesome === */
@@ -18,35 +11,7 @@
 
 @import url('overwrite.css');
 @import url('animate.css');
-/* Table of content */
 
-/*===================================
-1. General
-2. layout
-3. Responsive media
-4. Header
-5. Section: Featured
-6. Sliders
-7. Intro
-8. Section: Content
-9. Section: Bottom
-10. Inner - Section: page headline
-11. Forms
-12. Portfolio
-13. Elements
-14. Blog & article
-15. Aside, sidebar
-16. Footer
-17. Divider, Line & Misc
-18. Position & alignment
-19. More icon from custom font icon
-20. Spacer, margin
-21. Media queries
-==================================== */
-
-/* ===================================
-1. General
-==================================== */
 
 body {
   font-family: 'Open Sans', Arial, sans-serif;

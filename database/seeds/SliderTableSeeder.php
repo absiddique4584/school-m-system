@@ -12,12 +12,21 @@ class SliderTableSeeder extends Seeder
      */
     public function run()
     {
-        foreach (range(1, 3) as $index) {
-            Slider::create([
-                'image'     => $this->getRandomImage(),
-                'status'    => $this->getRandomStatus()
-            ]);
-        }
+        Slider::create([
+            'image' => '20200704093049.jpg',
+            'status' => $this->getRandomStatus(),
+        ]);
+
+        Slider::create([
+            'image' => '20200704093017.PNG',
+            'status' => $this->getRandomStatus(),
+        ]);
+        Slider::create([
+            'image' => '20200704093034.jpg',
+            'status' => $this->getRandomStatus(),
+        ]);
+
+
     }
 
     /**
@@ -33,10 +42,5 @@ class SliderTableSeeder extends Seeder
     /**
      * @return mixed
      */
-    public function getRandomImage()
-    {
-        # Generate random image
-        $image = array('hero.jpg', 'smart.jpg', 'smart3.jpg');
-        return $image[array_rand($image)];
-    }
+
 }

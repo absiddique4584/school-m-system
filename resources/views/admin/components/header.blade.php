@@ -7,13 +7,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>@yield('title')</title>
-
+    @foreach($name as $na)
+    <title>@yield('title'){!! $na->app_name !!}</title>
+    @endforeach
 
     <link href="{{asset('assets/admin/stylesheets/font-awesome/css/font-awesome.css')}}" rel="stylesheet">
+    <link href="{{asset('assets/admin/css/admin.css')}}" rel="stylesheet" />
     <link href="{{asset('assets/admin/btheme/css/styles.css')}}" rel="stylesheet" />
     <link href="{{asset('assets/admin/stylesheets/css/bootstrap-toggle.min.css')}}" rel="stylesheet">
 
+    @foreach($fab_logo as $fab)
+    <link rel="icon" sizes="144x144" href="{{asset('uploads/settings-logo/'.$fab->logo)}}" />
+    @endforeach
     <style>
         .active{
             color: #c81dbe;
@@ -29,8 +34,16 @@
 </head>
 <body class="sb-nav-fixed">
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">SCHOOL-M-SYSTEM</a><button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i class="fa fa-bars"></i></button
-        ><!-- Navbar Search-->
+        @foreach($name as $na)
+        <a class="navbar-brand" href="#">
+            <strong>
+                {!! $na->app_name !!}
+            </strong>
+        </a>
+        @endforeach
+        <button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#">
+            <i class="fa fa-bars"></i></button>
+
         <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
             <div class="input-group">
                 <input class="form-control" type="text" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2" />
@@ -62,6 +75,11 @@
                             <li><a  style="color: #7BFFC1; " class="nav-link {{ request()->is('dashboard') ? 'active':'' }}" href="{{route('admin.home')}}"> <div class="sb-nav-link-icon"><i style="color: #f1f1f1;" class="fa fa-square-o"></i></div> DASHBOARD</a></li>
                             <li> <a  style="color: #7BFFC1; " class="nav-link  {{ request()->is('slider/manage','slider/add','slider/edit/*') ? 'active':'' }}" href="{{route('slider.manage')}}"> <div class="sb-nav-link-icon"><i style="color: #f1f1f1;" class="fa fa-globe"></i></div> SLIDER</a></li>
                             <li> <a  style="color: #7BFFC1; " class="nav-link  {{ request()->is('permission/manage','permission/edit/*') ? 'active':'' }}" href="{{route('permission.manage')}}"> <div class="sb-nav-link-icon"><i style="color: #f1f1f1;"  class="fa fa-anchor"></i></div> PERMISSION</a></li>
+                            <li> <a  style="color: #7BFFC1; " class="nav-link  {{ request()->is('institution/manage','institution/edit/*') ? 'active':'' }}" href="{{route('institution.manage')}}"> <div class="sb-nav-link-icon"><i style="color: #f1f1f1;"  class="fa fa-home"></i></div>INSTITUTION</a></li>
+                            <li> <a  style="color: #7BFFC1; " class="nav-link
+                            {{ request()->is('admit/manage','admit/edit/*','admit/add','admission/one','admission/two') ? 'active':'' }}"
+                            href="{{route('admit.manage')}}"> <div class="sb-nav-link-icon"><i style="color: #f1f1f1;"  class="fa fa-anchor"></i></div>ADMISSION</a></li>
+                            <li> <a  style="color: #7BFFC1; " class="nav-link  {{ request()->is('settings/manage','settings/edit/*','settings/add') ? 'active':'' }}" href="{{route('settings.manage')}}"> <div class="sb-nav-link-icon"><i style="color: #f1f1f1;"  class="fa fa-key"></i></div>SETTINGS</a></li>
                         </ul>
                         </div>
 

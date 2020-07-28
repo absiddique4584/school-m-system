@@ -3,18 +3,41 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Settings;
 use App\Models\Slider;
 use Illuminate\Http\Request;
 use Exception;
+use Illuminate\Support\Facades\View;
 use RealRashid\SweetAlert\Facades\Alert;
 class SliderController extends Controller
 {
 
 
+
+
+    /**
+     * SliderController constructor.
+     */
+    public function __construct()
+    {
+        $name =Settings::select('app_name')->get();
+        $fab_logo = Settings::select('logo')->get();
+        View::share([ 'name' => $name, 'fab_logo' => $fab_logo ]);
+    }
+
+
+
+
+
+
+    /**
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector|\Illuminate\View\View
+     */
     public function index()
     {
         if (auth()->user()->is_admin == 1) {
             $sliders = Slider::latest()->get();
+           // return $sliders;
             return view('admin.slider.manage', compact('sliders'));
         } else {
             Alert::warning("Oh! Sorry", "You Don't Have Permission to Access");
@@ -29,7 +52,7 @@ class SliderController extends Controller
     /**
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function add()
+       public function add()
     {
         if (auth()->user()->is_admin == 1) {
             return view('admin.slider.add');

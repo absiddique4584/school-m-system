@@ -1,33 +1,47 @@
 
 @extends('website.components.layouts')
 
-@section('title')
-    School-M-System
-    @endsection
-
     @section('content')
 
         <!----------------------------------------->
         <section id="featured">
-            <!-- start slider -->
-            <!-- Slider -->
             <div id="nivo-slider">
-
                 <div class="nivo-slider" >
                     @foreach($sliders as $slider)
-
                     <img style="height: 400px; width: 100%;" src="{{asset('uploads/slider/'.$slider->image)}}" alt=""  />
-
-
                     @endforeach
                 </div>
-
             </div>
-            <!-- end slider -->
         </section>
         <br>
-        <!----------------------------------------->
+        <section>
+            <div class="school-body">
+                @foreach($institutions as $institution)
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3 class="school-name"><strong>{{$institution->school_name}}</strong></h3>
+                        <h3 class="school-reg">Registration no : {{$institution->school_reg}}</h3>
+                    </div>
+                </div>
+                @endforeach
+            </div>
+        </section>
 
+        <section class="data-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 pull-right data-right">
+                        <h4>Students List</h4>
+                        <a class="btn btn-large btn-theme btn-rounded" href="{{ route('studentlist.manage') }}">500 Over.</a>
+                    </div>
+                    <div class="col-md-6 pull-left data-left">
+                        <h4>For Admission</h4>
+                        <a class="btn btn-large btn-theme btn-rounded" href="{{ route('admission.manage') }}">Click Here</a>
+                    </div>
+                </div>
+            </div>
+
+        </section>
 
         <section id="content">
             <se class="container">
@@ -100,23 +114,6 @@
                 <!------------------->
                 <!------------------->
 
-        <section class="callaction">
-            <div class="container">
-                <div class="row">
-                    <div class="span12">
-                        <div class="big-cta">
-                            <div class="cta-text">
-                                <h3> <span class="highlight">List<strong> Of Our</strong></span> Students</h3>
-                            </div>
-                            <div class="cta floatright">
-                                <a class="btn btn-large btn-theme btn-rounded" href="#">500 Over.</a>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </section>
         <section id="content">
             <div class="container">
 
@@ -327,8 +324,8 @@
                             </li>
 
 
-
                         </ul>
+
                     </div>
                 </div>
             </div>

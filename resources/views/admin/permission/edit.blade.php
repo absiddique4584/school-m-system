@@ -1,6 +1,6 @@
 @extends('admin.components.layout')
 @section('title')
-    Permission Edit | School-M-System
+    Permission Edit |
 @endsection
 
 @section('content')
@@ -11,11 +11,6 @@
                 <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
                 <li class="breadcrumb-item ">Edit Permission</li>
             </ol>
-
-
-            <!--------------------------------------------->
-            <!--------------------------------------------->
-
 
             <div class="container-fluid ">
                 <div class="row">
@@ -79,10 +74,6 @@
                     </div>
                 </div>
             </div>
-            <!--------------------------------------------->
-            <!--------------------------------------------->
-
-
         </div>
     </main>
 

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Settings;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -31,7 +32,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-            return view('admin.dashboard');
+            //$titles =Settings::select('app_name')->get();
+            $name =Settings::select('app_name')->get();
+            $fab_logo = Settings::select('logo')->get();
+            return view('admin.dashboard',compact('fab_logo','name'));
 
     }
 
@@ -45,8 +49,10 @@ class HomeController extends Controller
      */
 
     public function adminHome(){
-
-         return view('admin.dashboard');
+         //$titles =Settings::select('app_name')->get();
+         $name =Settings::select('app_name')->get();
+         $fab_logo = Settings::select('logo')->get();
+         return view('admin.dashboard',compact('fab_logo','name'));
 
 
     }

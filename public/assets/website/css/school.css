@@ -1,0 +1,84 @@
+.school-body{
+    background: #fffbdb;
+    height: 190px;
+    width: 100%;
+}
+.school-name{
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 30px;
+    padding-top: 40px;
+    color: #F03C02;
+}
+.school-reg{
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 20px;
+}
+.data-section{
+    background: #f6f1f1;
+    height: 200px;
+}
+.data-left{
+    padding-top: 40px;
+    padding-left: 180px;
+}
+
+.data-left a{
+    margin-left: 30px;
+}
+
+.data-right{
+    padding-top: 40px;
+    padding-right: 180px;
+}
+
+.data-right a{
+    margin-left: 27px;
+}
+.admission-body{
+    max-width: 720px;
+    max-height: 100%;
+    margin-left: 230px;
+    background-color: #fcf7f7;
+    padding-left: 25px;
+}
+.admission-head{
+    text-align: center;
+    padding-top: 14px;
+}
+.input-group{
+    height: 32px !important;
+    width: 640px;
+
+}
+.ligroup{
+    padding-left: 21px;
+}
+.text-area{
+    height: 90px;
+    width: 640px;
+}
+.select-group{
+    height: 32px !important;
+    width: 655px;
+}
+.button-up{
+    padding-bottom: 35px;
+    padding-right: 39px;
+}
+.welcome-message{
+    color: #9561e2;
+}
+.school-name{
+    color: #abc607;
+}
+
+
+
+
+
+
+
+
+
