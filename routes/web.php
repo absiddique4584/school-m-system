@@ -73,6 +73,16 @@ Route::group(['middleware' => 'auth'], function () {
     Route::prefix('admission')->name('admission.')->group(function () {
         Route::get('/one', 'Admin\AdmissionAdminController@one')->name('one');
         Route::get('/two', 'Admin\AdmissionAdminController@two')->name('two');
+        Route::get('/three', 'Admin\AdmissionAdminController@three')->name('three');
+        Route::get('/four', 'Admin\AdmissionAdminController@four')->name('four');
+        Route::get('/five', 'Admin\AdmissionAdminController@five')->name('five');
+        Route::get('/six', 'Admin\AdmissionAdminController@six')->name('six');
+        Route::get('/seven', 'Admin\AdmissionAdminController@seven')->name('seven');
+        Route::get('/eight', 'Admin\AdmissionAdminController@eight')->name('eight');
+        Route::get('/nine', 'Admin\AdmissionAdminController@nine')->name('nine');
+        Route::get('/ten', 'Admin\AdmissionAdminController@ten')->name('ten');
+        Route::get('/eleven', 'Admin\AdmissionAdminController@eleven')->name('eleven');
+        Route::get('/twelve', 'Admin\AdmissionAdminController@twelve')->name('twelve');
     });
 
 

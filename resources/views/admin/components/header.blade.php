@@ -77,7 +77,7 @@
                             <li> <a  style="color: #7BFFC1; " class="nav-link  {{ request()->is('permission/manage','permission/edit/*') ? 'active':'' }}" href="{{route('permission.manage')}}"> <div class="sb-nav-link-icon"><i style="color: #f1f1f1;"  class="fa fa-anchor"></i></div> PERMISSION</a></li>
                             <li> <a  style="color: #7BFFC1; " class="nav-link  {{ request()->is('institution/manage','institution/edit/*') ? 'active':'' }}" href="{{route('institution.manage')}}"> <div class="sb-nav-link-icon"><i style="color: #f1f1f1;"  class="fa fa-home"></i></div>INSTITUTION</a></li>
                             <li> <a  style="color: #7BFFC1; " class="nav-link
-                            {{ request()->is('admit/manage','admit/edit/*','admit/add','admission/one','admission/two') ? 'active':'' }}"
+                            {{ request()->is('admit/manage','admission/one','admission/two','admission/three','admission/four','admission/five','admission/six','admission/seven','admission/eight','admission/nine','admission/ten','admission/eleven','admission/twelve') ? 'active':'' }}"
                             href="{{route('admit.manage')}}"> <div class="sb-nav-link-icon"><i style="color: #f1f1f1;"  class="fa fa-anchor"></i></div>ADMISSION</a></li>
                             <li> <a  style="color: #7BFFC1; " class="nav-link  {{ request()->is('settings/manage','settings/edit/*','settings/add') ? 'active':'' }}" href="{{route('settings.manage')}}"> <div class="sb-nav-link-icon"><i style="color: #f1f1f1;"  class="fa fa-key"></i></div>SETTINGS</a></li>
                         </ul>

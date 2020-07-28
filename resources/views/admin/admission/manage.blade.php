@@ -17,16 +17,16 @@
                     <div>
                         <a href="{{ route('admission.one') }}"><button class="btn btn-info ">One</button></a>
                         <a href="{{ route('admission.two') }}"><button class="btn btn-info">Two</button></a>
-                        <a href=""><button class="btn btn-info">Three</button></a>
-                        <a href=""><button class="btn btn-info">Four</button></a>
-                        <a href=""><button class="btn btn-info">Five</button></a>
-                        <a href=""><button class="btn btn-info">Six</button></a>
-                        <a href=""><button class="btn btn-info">Seven</button></a>
-                        <a href=""><button class="btn btn-info">Eight</button></a>
-                        <a href=""><button class="btn btn-info">Nine</button></a>
-                        <a href=""><button class="btn btn-info">Ten</button></a>
-                        <a href=""><button class="btn btn-info">Eleven</button></a>
-                        <a href=""><button class="btn btn-info">Twelve</button></a>
+                        <a href="{{ route('admission.three') }}"><button class="btn btn-info">Three</button></a>
+                        <a href="{{ route('admission.four') }}"><button class="btn btn-info">Four</button></a>
+                        <a href="{{ route('admission.five') }}"><button class="btn btn-info">Five</button></a>
+                        <a href="{{ route('admission.six') }}"><button class="btn btn-info">Six</button></a>
+                        <a href="{{ route('admission.seven') }}"><button class="btn btn-info">Seven</button></a>
+                        <a href="{{ route('admission.eight') }}"><button class="btn btn-info">Eight</button></a>
+                        <a href="{{ route('admission.nine') }}"><button class="btn btn-info">Nine</button></a>
+                        <a href="{{ route('admission.ten') }}"><button class="btn btn-info">Ten</button></a>
+                        <a href="{{ route('admission.eleven') }}"><button class="btn btn-info">Eleven</button></a>
+                        <a href="{{ route('admission.twelve') }}"><button class="btn btn-info">Twelve</button></a>
                     </div>
 
                     @include('sweetalert::alert')

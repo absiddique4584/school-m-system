@@ -1,6 +1,6 @@
 @extends('admin.components.layout')
 @section('title')
-    Admission Two |
+    Admission Six |
 @endsection
 
 @section('content')
@@ -9,18 +9,18 @@
             <br>
             <ol class="breadcrumb mb-4">
                 <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-                <li class="breadcrumb-item ">Manage Admission Two</li>
+                <li class="breadcrumb-item ">Manage Admission Six</li>
             </ol>
 
             <div class="container-fluid ">
                 <div class="row">
                     <div>
                         <a href="{{ route('admission.one') }}"><button class="btn btn btn-info">One</button></a>
-                        <a href="{{ route('admission.two') }}"><button class="btn {{ request()->is('admission/two') ? 'active-item':'' }}">Two</button></a>
+                        <a href="{{ route('admission.two') }}"><button class="btn btn-info">Two</button></a>
                         <a href="{{ route('admission.three') }}"><button class="btn btn-info">Three</button></a>
                         <a href="{{ route('admission.four') }}"><button class="btn btn-info">Four</button></a>
                         <a href="{{ route('admission.five') }}"><button class="btn btn-info">Five</button></a>
-                        <a href="{{ route('admission.six') }}"><button class="btn btn-info">Six</button></a>
+                        <a href="{{ route('admission.six') }}"><button class="btn {{ request()->is('admission/six') ? 'active-item':'' }}">Six</button></a>
                         <a href="{{ route('admission.seven') }}"><button class="btn btn-info">Seven</button></a>
                         <a href="{{ route('admission.eight') }}"><button class="btn btn-info">Eight</button></a>
                         <a href="{{ route('admission.nine') }}"><button class="btn btn-info">Nine</button></a>
@@ -39,7 +39,7 @@
                     </style>
                     @include('sweetalert::alert')
                     <div class="col-sm-12">
-                        <h4 class=" mt-4"><strong>Admission Manage Two Table</strong></h4>
+                        <h4 class=" mt-4"><strong>Admission Manage Six Table</strong></h4>
                     </div>
 
                 </div>
@@ -47,7 +47,7 @@
 
 
             <div class="card mb-4 ">
-                <div class="card-header"><i class="fa fa-table mr-1"></i>Admission Class >> Two</div>
+                <div class="card-header"><i class="fa fa-table mr-1"></i>Admission Class >> Six</div>
                 <div class="card-body">
                     <div class="table-responsive">
                         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -73,7 +73,7 @@
                             </thead>
 
                             <tbody>
-                                @foreach($admission_two as $admit)
+                                @foreach($admission_six as $admit)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
                                         <td>{{ $admit->admission_p_part->name }}</td>
