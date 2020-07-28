@@ -20,7 +20,7 @@
             <div class="container-fluid ">
                 <div class="row">
                     <div class="col-sm-3">
-                        <h4 class=" mt-4">Edit Slider</h4>
+                        <h4 class=" mt-4">Update Slider</h4>
                     </div>
                     <div class="col-sm-6"></div>
                     <div class="col-sm-3">
@@ -59,15 +59,8 @@
                                     </select>
                                 </div>
                             </div>
-
-
-
-
-
-                            <div class="row form-group">
-
-
-                                <button style="margin-left: 23px;" type="submit" class="btn btn-info">Add Slider</button>
+                                                        <div class="row form-group">
+                                <button style="margin-left: 23px;" type="submit" class="btn btn-info">Update Slider</button>
                             </div>
                         </form>
                     </div>

@@ -32,7 +32,7 @@
                 <div class="row">
                     <div class="col-md-6 pull-right data-right">
                         <h4>Students List</h4>
-                        <a class="btn btn-large btn-theme btn-rounded" href="{{ route('studentlist.manage') }}">500 Over.</a>
+                        <a class="btn btn-large btn-theme btn-rounded" href="{{ route('studentlist.manage') }}">Click Here</a>
                     </div>
                     <div class="col-md-6 pull-left data-left">
                         <h4>For Admission</h4>

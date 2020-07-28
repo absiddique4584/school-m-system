@@ -48,13 +48,12 @@
                                     <th>SI NO.</th>
                                     <th>Name</th>
                                     <th>Image</th>
-                                    <th>Previous School</th>
                                     <th>Phone</th>
                                     <th>Email</th>
                                     <th>Date Of Birth</th>
                                     <th>Place Of Birth</th>
+                                    <th>Previous School</th>
                                     <th>Previous Class</th>
-                                    <th>Action</th>
                                 </tr>
                             </thead>
 
@@ -64,18 +63,12 @@
                                         <td>{{ $loop->iteration }}</td>
                                         <td>{{ $admit->name }}</td>
                                         <td><img style="width: 60px" src="{{ asset('uploads/admission/'.$admit->image) }}" alt=""></td>
-                                        <td>{{ substr($admit->p_school,0,20) }}</td>
                                         <td>{{ $admit->s_phone }}</td>
                                         <td>{{ $admit->s_email }}</td>
                                         <td>{{ $admit->d_birth }}</td>
                                         <td>{{ $admit->p_birth }}</td>
+                                        <td>{{ substr($admit->p_school,0,20) }}</td>
                                         <td>{{ $admit->class }}</td>
-                                        <td>
-                                            <div class="btn-group" role="group" aria-label="Basic example">
-                                                <a href="#" class="btn btn-info "><i class="fa fa-pencil"></i></a>
-                                                <a href="#" class="btn btn-danger "><i class="fa fa-trash-o"></i></a>
-                                            </div>
-                                        </td>
                                     </tr>
                                 @endforeach
                             </tbody>

@@ -92,8 +92,8 @@
                                         <td>{{ substr($admit->address,0,20) }}</td>
                                         <td>
                                             <div class="btn-group" role="group" aria-label="Basic example">
-                                                <a href="#" class="btn btn-info "><i class="fa fa-pencil"></i></a>
-                                                <a href="#" class="btn btn-danger "><i class="fa fa-trash-o"></i></a>
+                                                <a href="#" class="btn btn-info "><i class="fa fa-eye"></i></a>
+                                                <a href="{{ route('admission.two.delete', base64_encode($admit->id)) }}" class="btn btn-danger "><i class="fa fa-trash-o"></i></a>
                                             </div>
                                         </td>
                                     </tr>

@@ -8,17 +8,18 @@ Route::get('/', 'Website\WebsiteController@website_index')->name('website.index'
 Auth::routes();
 
 
-//website route
-Route::group(['middleware' => 'auth'], function () {
+
     //admission route
     Route::get('admission/manage', 'Website\AdmissionController@index')->name('admission.manage');
     Route::post('admission/student', 'Website\AdmissionController@studentAdmission')->name('admission.student.part');
     Route::get('admission/parents/section', 'Website\AdmissionController@parentsSection');
     Route::post('admission/parents/section', 'Website\AdmissionController@parents_p_Section')->name('admission.parents.box');
     Route::get('admission/admission-message', 'Website\AdmissionController@admissionMessage');
+
+
     //student list route
     Route::get('studentlist/manage', 'Website\StudentlistController@index')->name('studentlist.manage');
-});
+
 
 
 #--------------------------------------------------#
@@ -83,6 +84,21 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/ten', 'Admin\AdmissionAdminController@ten')->name('ten');
         Route::get('/eleven', 'Admin\AdmissionAdminController@eleven')->name('eleven');
         Route::get('/twelve', 'Admin\AdmissionAdminController@twelve')->name('twelve');
+    });
+
+    Route::prefix('admission')->name('admission.')->group(function () {
+        Route::get('/one/delete/{id}', 'Admin\AdmissionDeleteController@oneDelete')->name('one.delete');
+        Route::get('/two/delete/{id}', 'Admin\AdmissionDeleteController@twoDelete')->name('two.delete');
+        Route::get('/three/delete/{id}', 'Admin\AdmissionDeleteController@threeDelete')->name('three.delete');
+        Route::get('/four/delete/{id}', 'Admin\AdmissionDeleteController@fourDelete')->name('four.delete');
+        Route::get('/five/delete/{id}', 'Admin\AdmissionDeleteController@fiveDelete')->name('five.delete');
+        Route::get('/six/delete/{id}', 'Admin\AdmissionDeleteController@sixDelete')->name('six.delete');
+        Route::get('/seven/delete/{id}', 'Admin\AdmissionDeleteController@sevenDelete')->name('seven.delete');
+        Route::get('/eight/delete/{id}', 'Admin\AdmissionDeleteController@eightDelete')->name('eight.delete');
+        Route::get('/nine/delete/{id}', 'Admin\AdmissionDeleteController@nineDelete')->name('nine.delete');
+        Route::get('/ten/delete/{id}', 'Admin\AdmissionDeleteController@tenDelete')->name('ten.delete');
+        Route::get('/eleven/delete/{id}', 'Admin\AdmissionDeleteController@elevenDelete')->name('eleven.delete');
+        Route::get('/twelve/delete/{id}', 'Admin\AdmissionDeleteController@twelveDelete')->name('twelve.delete');
     });
 
 
