@@ -12,11 +12,6 @@
                 <li class="breadcrumb-item ">Edit Slider</li>
             </ol>
 
-
-            <!--------------------------------------------->
-            <!--------------------------------------------->
-
-
             <div class="container-fluid ">
                 <div class="row">
                     <div class="col-sm-3">

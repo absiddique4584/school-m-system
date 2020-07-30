@@ -79,6 +79,9 @@
                             <li> <a  style="color: #7BFFC1; " class="nav-link
                             {{ request()->is('admit/manage','admission/one','admission/two','admission/three','admission/four','admission/five','admission/six','admission/seven','admission/eight','admission/nine','admission/ten','admission/eleven','admission/twelve') ? 'active':'' }}"
                             href="{{route('admit.manage')}}"> <div class="sb-nav-link-icon"><i style="color: #f1f1f1;"  class="fa fa-anchor"></i></div>ADMISSION</a></li>
+                            <li> <a  style="color: #7BFFC1; " class="nav-link
+                            {{ request()->is('subjects/manage','subjects/manage/one','subjects/manage/one/edit/*','subjects/manage/one/add',
+                            'subjects/manage/two','subjects/manage/three','subjects/manage/four','subjects/manage/five','subjects/manage/six','subjects/manage/seven','subjects/manage/eight','subjects/manage/nine','subjects/manage/ten','subjects/manage/eleven','subjects/manage/twelve') ? 'active':'' }}" href="{{route('subjects.manage')}}"> <div class="sb-nav-link-icon"><i style="color: #f1f1f1;"  class="fa fa-book"></i></div>SUBJECTS</a></li>
                             <li> <a  style="color: #7BFFC1; " class="nav-link  {{ request()->is('settings/manage','settings/edit/*','settings/add') ? 'active':'' }}" href="{{route('settings.manage')}}"> <div class="sb-nav-link-icon"><i style="color: #f1f1f1;"  class="fa fa-key"></i></div>SETTINGS</a></li>
                         </ul>
                         </div>

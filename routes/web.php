@@ -19,6 +19,19 @@ Auth::routes();
 
     //student list route
     Route::get('studentlist/manage', 'Website\StudentlistController@index')->name('studentlist.manage');
+    Route::get('studentlist/manage/one', 'Website\StudentlistController@one')->name('studentlist.manage.one');
+    Route::get('studentlist/manage/two', 'Website\StudentlistController@two')->name('studentlist.manage.two');
+    Route::get('studentlist/manage/three', 'Website\StudentlistController@three')->name('studentlist.manage.three');
+    Route::get('studentlist/manage/four', 'Website\StudentlistController@four')->name('studentlist.manage.four');
+    Route::get('studentlist/manage/five', 'Website\StudentlistController@five')->name('studentlist.manage.five');
+    Route::get('studentlist/manage/six', 'Website\StudentlistController@six')->name('studentlist.manage.six');
+    Route::get('studentlist/manage/seven', 'Website\StudentlistController@seven')->name('studentlist.manage.seven');
+    Route::get('studentlist/manage/eight', 'Website\StudentlistController@eight')->name('studentlist.manage.eight');
+    Route::get('studentlist/manage/nine', 'Website\StudentlistController@nine')->name('studentlist.manage.nine');
+    Route::get('studentlist/manage/ten', 'Website\StudentlistController@ten')->name('studentlist.manage.ten');
+    Route::get('studentlist/manage/eleven', 'Website\StudentlistController@eleven')->name('studentlist.manage.eleven');
+    Route::get('studentlist/manage/twelve', 'Website\StudentlistController@twelve')->name('studentlist.manage.twelve');
+    //Route::get('studentlist/manage/others', 'Website\StudentlistController@others')->name('studentlist.manage.others');
 
 
 
@@ -100,6 +113,33 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/eleven/delete/{id}', 'Admin\AdmissionDeleteController@elevenDelete')->name('eleven.delete');
         Route::get('/twelve/delete/{id}', 'Admin\AdmissionDeleteController@twelveDelete')->name('twelve.delete');
     });
+
+//subjects route
+    Route::prefix('subjects')->name('subjects.')->group(function () {
+        Route::get('/manage', 'Admin\SubjectsController@index')->name('manage');
+
+
+        Route::get('/manage/one', 'Admin\SubjectsController@one')->name('manage.one');
+        Route::get('/manage/one/delete/{id}', 'Admin\SubjectsController@delete')->name('manage.one.delete');
+        Route::get('/manage/one/edit/{id}', 'Admin\SubjectsController@edit')->name('manage.one.edit');
+        Route::post('/manage/one/update/{id}', 'Admin\SubjectsController@update')->name('manage.one.update');
+        Route::post('/manage/one/store', 'Admin\SubjectsController@store')->name('manage.one.store');
+        Route::get('/manage/one/add', 'Admin\SubjectsController@add')->name('manage.one.add');
+
+
+        Route::get('/manage/two', 'Admin\SubjectsController@two')->name('manage.two');
+        Route::get('/manage/three', 'Admin\SubjectsController@three')->name('manage.three');
+        Route::get('/manage/four', 'Admin\SubjectsController@four')->name('manage.four');
+        Route::get('/manage/five', 'Admin\SubjectsController@five')->name('manage.five');
+        Route::get('/manage/six', 'Admin\SubjectsController@six')->name('manage.six');
+        Route::get('/manage/seven', 'Admin\SubjectsController@seven')->name('manage.seven');
+        Route::get('/manage/eight', 'Admin\SubjectsController@eight')->name('manage.eight');
+        Route::get('/manage/nine', 'Admin\SubjectsController@nine')->name('manage.nine');
+        Route::get('/manage/ten', 'Admin\SubjectsController@ten')->name('manage.ten');
+        Route::get('/manage/eleven', 'Admin\SubjectsController@eleven')->name('manage.eleven');
+        Route::get('/manage/twelve', 'Admin\SubjectsController@twelve')->name('manage.twelve');
+    });
+
 
 
     Route::prefix('settings')->name('settings.')->group(function () {

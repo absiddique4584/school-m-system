@@ -12,11 +12,6 @@
                 <li class="breadcrumb-item ">Add Slider</li>
             </ol>
 
-
-        <!--------------------------------------------->
-            <!--------------------------------------------->
-
-
             <div class="container-fluid ">
                 <div class="row">
                     @include('sweetalert::alert')
@@ -59,10 +54,6 @@
                                     </select>
                                 </div>
                             </div>
-
-
-
-
 
                             <div class="row form-group">
 

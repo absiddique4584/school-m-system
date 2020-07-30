@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
              InstitutionsTableSeeder::class,
              AdmissionTableSeeder::class,
              Admission_p_TableSeeder::class,
+             SubjectsOneTableSeeder::class,
          ]);
     }
 }
